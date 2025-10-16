@@ -1,10 +1,10 @@
 # 本專案為收集與翻譯優秀提示詞，作為公開便利工具
 
 ## prompts for thinking AI:
-提升泛用提升ai思考，讓非思考模型得到性能提升，減少錯誤。
+[here](https://github.com/pikapikalai/Style-Presentation-Prompt-based-on-Claude-/tree/main/prompts%20for%20thinking%20AI)提升泛用提升ai思考，讓非思考模型得到性能提升，減少錯誤。
 
 ## prompts for web-page:
-蒐集與提供調整過與中文化之prompt,產生一鍵式網頁/簡報 
+[here](https://github.com/pikapikalai/Style-Presentation-Prompt-based-on-Claude-/tree/main/prompts%20for%20web-page)蒐集與提供調整過與中文化之prompt,產生一鍵式網頁/簡報 
 
 # sample
 
