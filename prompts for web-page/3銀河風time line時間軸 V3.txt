@@ -1,0 +1,221 @@
+# 銀河時間軸圖像記錄 (Graphic Recording) HTML 創建提示詞 V3
+
+## 目的
+請將以下內容轉換為以宇宙為主題、充滿夢幻且活潑氛围的時間軸形式圖像記錄HTML。在資訊設計和視覺設計兩個層面都追求最高水準。運用手繪風格元素與宇宙背景，創造神秘且視覺上極具吸引力的時間軸。
+
+## 設計規格
+### 1. 色彩方案
+&&&
+<palette>
+<color name='插圖-1' rgb='5BA67B' r='91' g='165' b='123' />
+<color name='插圖-2' rgb='F2BB13' r='242' g='186' b='19' />
+<color name='插圖-3' rgb='F2DB94' r='242' g='218' b='147' />
+<color name='插圖-4' rgb='BF8665' r='191' g='134' b='101' />
+<color name='插圖-5' rgb='BF190A' r='191' g='24' b='9' />
+</palette>
+&&&
+
+### 2. 宇宙主題的視覺效果
+- 深色宇宙背景（#080808）散佈小星星
+- 左上角配置大型「太陽」般的光源（使用調色盤主要色彩）
+- 透過動畫讓光源產生呼吸般的動態效果
+- 圓形標記設計為色彩繽紛的「行星」風格
+- 整體應用星塵般的細緻背景紋理
+
+### 3. 時間軸結構
+- 中央設置垂直時間軸
+- 項目左右交替配置
+- 每個項目添加行星風格的圓形標記
+- 年代顯示設計為浮現的卡片樣式
+- 底部或右側配置快速導航選擇器
+- 標記和選擇器添加發光效果
+
+### 4. 字體排版與文字處理
+- 標題：添加如夜空中閃耀星星般的發光效果
+- 日期：以白色背景浮現的形式強調
+- 事件標題：使用調色盤的明亮色彩顯示
+- 詳細文字：半透明背景配明亮文字
+- 字體指定：
+  &&&html
+  <style>
+  @import url('https://fonts.googleapis.com/css2?family=Kaisei+Decol&family=Yomogi&family=Zen+Kurenaido&display=swap');
+  </style>
+  &&&
+
+### 5. 視覺元素與強調
+- 使用 Font Awesome 圖示視覺化各事件內容
+- 關鍵字突顯（漸層底線效果）
+- 項目間保持適當留白確保可讀性
+- 運用半透明效果和模糊營造景深感
+- 滑鼠懸停時的動畫讓項目浮起
+
+## CSS基本結構
+&&&css
+/* 宇宙背景設定 */
+body {
+    background: #080808;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+/* 太陽般的光源 */
+body:before {
+    content: "";
+    position: fixed;
+    height: 100vh;
+    width: 100vh;
+    background: radial-gradient(circle, rgba(91,166,123,1) 0%, rgba(91,166,123,0.7) 50%, rgba(91,166,123,0) 100%);
+    left: -70vh;
+    top: -20vh;
+    border-radius: 100%;
+    box-shadow: 0 0 10em 5em rgba(91,166,123,0.4), 0 0 100px 50px rgba(91,166,123,0.6) inset,
+        0 0 10px 5px rgba(242,187,19,0.9), 0 0 10px 5px rgba(242,187,19,0.8) inset;
+    filter: blur(5px);
+    z-index: 2;
+    animation: glow 15s ease-in-out infinite alternate;
+}
+
+/* 星空背景 */
+body:after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -2;
+    background: #080808;
+    background-image: 
+        radial-gradient(2px 2px at 20px 30px, #fff, rgba(255,255,255,0)),
+        radial-gradient(1px 1px at 43px 75px, #fff, rgba(255,255,255,0)),
+        /* 添加大量星星 */
+        linear-gradient(-90deg, rgba(91,166,123,0.3) 0%, #000 50%, rgba(191,25,10,0.3) 100%);
+    background-repeat: repeat;
+}
+
+/* 時間軸中央線 */
+.timeline::after {
+    content: "";
+    position: absolute;
+    width: 0.5vmin;
+    background: linear-gradient(
+        180deg,
+        #5BA67B 0 20vh,
+        #F2BB13 0 35vh,
+        #BF8665 0 55vh,
+        #BF190A 0 75vh,
+        #5BA67B 0 100%
+    );
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -0.25vmin;
+    z-index: -1;
+}
+
+/* 時間軸項目 */
+.timeline li {
+    text-align: right;
+    list-style-type: none;
+    padding: 0 4vmin 0 0;
+    position: relative;
+    width: 50%;
+    perspective: 30vmin;
+}
+
+/* 右側項目 */
+.timeline li:nth-child(even) {
+    text-align: left;
+    left: 50%;
+    padding: 0 0 0 4vmin;
+}
+
+/* 圓形標記（行星風格） */
+.timeline li:after {
+    content: "";
+    position: absolute;
+    width: 4.5vmin;
+    height: 4.5vmin;
+    right: -2.25vmin;
+    border: 0.5vmin solid #fff;
+    top: -0.25vmin;
+    border-radius: 50%;
+    z-index: 1;
+    background: radial-gradient(circle, rgba(91,166,123,1) 0%, rgba(91,166,123,0.7) 70%, rgba(91,166,123,0) 100%);
+    box-shadow: 0 0 5px 2px rgba(91,166,123,0.7);
+}
+
+/* 導航選擇器 */
+.selector {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 10vmin;
+    background: linear-gradient(180deg, rgba(255,255,255,0) 0 32%, rgba(255,255,255,0.5) 0 34%, rgba(255,255,255,0) 0 100%);
+    z-index: 3;
+    padding-top: 6vmin;
+}
+&&&
+
+## HTML基本結構
+&&&html
+<h1>標題</h1>
+
+<div class="selector">
+    <a href="#section1">時期1<span>年代</span><strong>詳細說明</strong></a>
+    <a href="#section2">時期2<span>年代</span><strong>詳細說明</strong></a>
+    <!-- 其他區段連結 -->
+</div>
+
+<ul class="timeline">
+    <li>
+        <h2 id="section1"></h2>
+        <time><strong>年</strong><span>月日<br><em>類別</em></span></time>
+        <strong><span>事件標題</span></strong>
+        <span>
+            <i class="fa-solid fa-icon event-icon"></i>
+            事件詳細說明。<span class="highlight">重要關鍵字</span>需突顯。
+        </span>
+    </li>
+    <!-- 其他時間軸項目 -->
+</ul>
+&&&
+
+## 響應式設計對應
+- 桌面版：左右分開的時間軸，底部配置選擇器
+- 行動裝置直向：右側配置選擇器，時間軸靠中央
+- 一般行動裝置：時間軸改為垂直單列，調整標記位置
+
+## 特殊效果與動畫
+- 太陽呼吸效果：`@keyframes glow { 0% { opacity: 0.7; } 100% { opacity: 1; } }`
+- 行星標記光輝：`box-shadow: 0 0 5px 2px rgba(91,166,123,0.7);`
+- 文字卡片懸停效果：`transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.15);`
+- 導航項目懸停效果：讓說明向上浮現
+- 突顯效果：`background: linear-gradient(transparent 60%, rgba(242,187,19,0.4) 60%);`
+
+## 實作時注意事項
+1. 一致使用色彩調色盤，維持符合宇宙主題的色調
+2. 調整光源與星星配置，注意不要影響時間軸的可讀性
+3. 調整時間軸項目間距，提供流暢的捲動體驗
+4. 根據各事件性質適當選擇 Font Awesome 圖示
+5. 響應式顯示時也要維持視覺衝擊力
+
+## 整體指導方針
+- 視覺化結合宇宙的無限延伸與時間流動
+- 讓閱讀者能自然移動視線的配置與適當留白
+- 視覺化明確呈現資訊的層級與關聯性
+- 融合手繪風格與宇宙主題的獨特美感
+- 用色彩區分各區段，視覺化呈現時代變化
+- 一致使用字體、顏色、圖示營造統一感
+
+## 具體範例：最適合年表、歷史事件、企業發展史、專案進度等
+- 可依主題調整太陽顏色與背景氛圍
+- 用不同顏色的標記區分各時代或階段
+- 變更圖示直覺傳達各事件性質
+
+依照此提示詞轉換輸入的內容，即可創造出如同漂浮在宇宙空間般、獨特且極具魅力的時間軸資訊圖表。
+
+====
+將下面的內容製作風格製作簡報:
+
+[放入你的內容]
