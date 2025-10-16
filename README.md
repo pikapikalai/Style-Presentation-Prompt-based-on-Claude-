@@ -19,9 +19,9 @@
     ![圖片範例2](https://github.com/pikapikalai/Style-Presentation-Prompt-based-on-Claude-/blob/main/demo_pic/c1.jpg)
 
 2.資訊圖表縮圖提示詞
-科技風
+科技風(圖例為虛擬腳色)
 ![圖片範例1](https://github.com/pikapikalai/Style-Presentation-Prompt-based-on-Claude-/blob/main/demo_pic/2a.jpg)
-溫馨彩色風
+溫馨彩色風(圖例為虛擬腳色)
 ![圖片範例2](https://github.com/pikapikalai/Style-Presentation-Prompt-based-on-Claude-/blob/main/demo_pic/2b.jpg)
 
 3.timeline時間表提示詞
