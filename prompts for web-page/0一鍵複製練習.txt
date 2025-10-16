@@ -1,0 +1,158 @@
+# 資訊圖表縮圖提示詞V2
+## 概述
+此提示詞用於生成如同一流顧問製作的高品質部落格文章縮圖。創建視覺上精緻、內容一目了然的 16:9 寬高比資訊圖表縮圖，支援響應式設計和動態效果。
+## 基本構成
+```
+[文章標題]的縮圖，使用 HTML/CSS 創建
+尺寸設定為 16:9（1920x1080px），寬度 100% 響應式
+使用 Font Awesome 圖示提升資訊圖表的可讀性和專業度
+加入動畫效果：浮動圖示、SVG 線條、旋轉圖形、粒子效果
+使用以下色彩地圖和字體設定
+```
+## 色彩調色盤定義（可自訂）
+### 科技風格（預設）
+```
+<palette name="tech-style">
+<color name='主背景漸層起點' hex='0a0e27' rgb='10,14,39' />
+<color name='主背景漸層中點' hex='2d1b4e' rgb='45,27,78' />
+<color name='主背景漸層終點' hex='0f2642' rgb='15,38,66' />
+<color name='主要強調色-藍' hex='4facfe' rgb='79,172,254' />
+<color name='主要強調色-紫' hex='667eea' rgb='102,126,234' />
+<color name='次要強調色-粉' hex='f093fb' rgb='240,147,251' />
+<color name='主要文字色' hex='ffffff' rgb='255,255,255' />
+<color name='次要文字色' hex='d0d9ff' rgb='208,217,255' />
+</palette>
+```
+### 其他風格（可替換）
+```
+<!-- 商務風格 -->
+<palette name="business-style">
+<color name='主背景' hex='1a1d29' />
+<color name='主要強調' hex='3b82f6' />
+<color name='次要強調' hex='8b5cf6' />
+<color name='成功色' hex='10b981' />
+</palette>
+<!-- 自然風格 -->
+<palette name="nature-style">
+<color name='主背景' hex='1e3a2a' />
+<color name='主要強調' hex='34d399' />
+<color name='次要強調' hex='a78bfa' />
+</palette>
+```
+## 字體定義（繁體中文）
+```
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+CSS 類別:
+.noto-sans-tc-regular { font-family: "Noto Sans TC", sans-serif; font-weight: 400; }
+.noto-sans-tc-medium { font-family: "Noto Sans TC", sans-serif; font-weight: 500; }
+.noto-sans-tc-bold { font-family: "Noto Sans TC", sans-serif; font-weight: 700; }
+.noto-sans-tc-black { font-family: "Noto Sans TC", sans-serif; font-weight: 900; }
+```
+## 設計元素
+以下元素必須包含：
+1. **標題區塊**:
+   - 主標題（大字體、發光效果 - Noto Sans TC Black 900）
+   - 副標題（補充資訊 - Noto Sans TC Medium 500）
+   - 相關 Font Awesome 圖示
+2. **視覺元素**:
+   - 右側相關圖形/圖表
+   - 徽章或標籤（主題/類別）
+   - 格線背景圖案
+3. **內容特色**:
+   - 3-4 個重點，搭配圖示
+   - 每個重點簡短清晰
+   - Hover 互動效果
+4. **動態效果**:
+   - 6 個以上浮動圖示（相關主題）
+   - SVG 回路線條動畫
+   - 旋轉幾何圖形（六角形/圓形）
+   - 5 個粒子上升效果
+   - 發光脈衝效果
+   - 格線移動動畫
+5. **響應式設計**:
+   - width: 100%，aspect-ratio: 16/9
+   - 使用 clamp() 流暢字體大小
+   - 平板、手機斷點適配
+## 動畫效果範例
+```
+/* 浮動 */
+@keyframes float {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(30px, -30px); }
+}
+/* 旋轉 */
+@keyframes rotate360 {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+/* 脈衝 */
+@keyframes pulse {
+    0%, 100% { opacity: 0.3; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.1); }
+}
+/* 發光 */
+@keyframes glow {
+    0%, 100% { text-shadow: 0 0 30px rgba(79, 172, 254, 0.8); }
+    50% { text-shadow: 0 0 50px rgba(79, 172, 254, 1); }
+}
+/* 繪製線條 */
+@keyframes drawLine {
+    0% { stroke-dashoffset: 1000; }
+    100% { stroke-dashoffset: 0; }
+}
+```
+## 使用範例
+```
+[主題名稱]的資訊圖表縮圖，使用 HTML/CSS 創建
+設定為 16:9 尺寸（1920x1080px），100% 寬度響應式
+使用科技風格配色（#4facfe 藍、#667eea 紫、#f093fb 粉）
+字體使用 Noto Sans TC（400, 500, 700, 900 字重）
+背景：深色漸層 + 格線圖案 + 3 個發光球體
+加入動畫效果：
+- 6 個浮動圖示（依主題選擇 Font Awesome 圖示）
+- 3 條 SVG 回路線條（帶脈衝點）
+- 旋轉六角形（3 層）
+- 5 個粒子從底部上升
+- 標題發光脈衝動畫
+版面配置：
+左側 - 標題 + 4 個特色要點（帶圖示和 Hover 效果）
+右側 - 詳細資訊卡片 + 強調區塊
+內容要點：
+1. [第一個重點]（圖示：fas fa-...）
+2. [第二個重點]（圖示：fas fa-...）
+3. [第三個重點]（圖示：fas fa-...）
+4. [第四個重點]（圖示：fas fa-...）
+```
+## 風格變化建議
+**科技/程式**：藍紫配色、晶片/程式碼圖示、回路裝飾
+**商業/財經**：藍金配色、圖表/錢幣圖示、直線裝飾
+**創意/設計**：彩虹漸層、調色盤/筆刷圖示、曲線裝飾
+**健康/運動**：綠橘配色、心跳/啞鈴圖示、有機曲線
+**教育/學習**：藍黃配色、書本/燈泡圖示、書頁裝飾
+## 注意事項
+- 確保文字與背景有足夠對比度
+- 動畫不要過度，保持流暢
+- 響應式在平板/手機正常顯示
+- 每個要點控制在 10 字以內
+- 圖示風格和配色保持統一
+---
+**根據主題調整配色、圖示和動畫，達到最佳視覺效果**
+```
+# 將以下的内容產生網頁:
+```
+# 認識我:
+小實(虛擬人物)
+# 學歷:
+國立清華大學 資訊工程學系 (學士)
+美國卡內基梅隆大學 機器學習研究所 (碩士)
+# 經歷:
+Google軟體工程實習生
+AI 新創公司 - 資料科學家
+金融科技 (FinTech) 公司
+技術部落格 - 兼職作者
+# 興趣:
+烘焙(法式甜點)
+公路自行車 (週末常挑戰山區路線)
+觀看 F1 賽車

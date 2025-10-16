@@ -1,0 +1,215 @@
+# 資訊圖表縮圖提示詞 V2溫馨色彩版
+
+## 概述
+此提示詞用於生成溫馨家庭風格的高品質部落格文章縮圖。創建色彩繽紛、視覺精緻、內容一目了然的 16:9 寬高比資訊圖表縮圖，支援響應式設計和動態效果。
+
+## 基本構成
+```
+[文章標題]的縮圖,使用 HTML/CSS 創建
+尺寸設定為 16:9(1920x1080px),寬度 100% 響應式
+使用 Font Awesome 圖示提升資訊圖表的可讀性和專業度
+加入動畫效果:浮動圖示、SVG 線條、旋轉圖形、粒子效果
+使用以下溫馨家庭風格色彩地圖和字體設定
+```
+
+## 色彩調色盤定義（溫馨家庭風格）
+
+### 背景漸層
+```
+<color name='主背景漸層起點' hex='fff8f0' rgb='255,248,240' />
+<color name='主背景漸層第二點' hex='ffe4e1' rgb='255,228,225' />
+<color name='主背景漸層第三點' hex='fef3c7' rgb='254,243,199' />
+<color name='主背景漸層終點' hex='dbeafe' rgb='219,234,254' />
+```
+
+### 發光球體
+```
+<color name='球體1-金黃' hex='FFD700' rgb='255,215,0' />
+<color name='球體2-亮粉紅' hex='FF69B4' rgb='255,105,180' />
+<color name='球體3-天空藍' hex='87CEEB' rgb='135,206,235' />
+```
+
+### 特色項目配色（4個特色各不同）
+```
+<color name='特色1-珊瑚紅' hex='FF6B6B' rgb='255,107,107' />
+<color name='特色2-亮黃色' hex='FFD93D' rgb='255,217,61' />
+<color name='特色3-翠綠色' hex='6BCB77' rgb='107,203,119' />
+<color name='特色4-亮粉紅' hex='FF69B4' rgb='255,105,180' />
+```
+
+### 資訊卡片配色（3張卡片各不同）
+```
+<color name='卡片1-亮藍色' hex='4D96FF' rgb='77,150,255' />
+<color name='卡片2-珊瑚紅' hex='FF6B6B' rgb='255,107,107' />
+<color name='卡片3-翠綠色' hex='6BCB77' rgb='107,203,119' />
+```
+
+### 浮動圖示配色（6個圖示各不同）
+```
+<color name='浮動圖示1-紅' hex='FF6B6B' rgb='255,107,107' />
+<color name='浮動圖示2-黃' hex='FFD93D' rgb='255,217,61' />
+<color name='浮動圖示3-綠' hex='6BCB77' rgb='107,203,119' />
+<color name='浮動圖示4-藍' hex='4D96FF' rgb='77,150,255' />
+<color name='浮動圖示5-粉' hex='FF69B4' rgb='255,105,180' />
+<color name='浮動圖示6-紫' hex='9B59B6' rgb='155,89,182' />
+```
+
+### SVG線條配色（3條線各不同）
+```
+<color name='線條1-紅' hex='FF6B6B' rgb='255,107,107' />
+<color name='線條2-綠' hex='6BCB77' rgb='107,203,119' />
+<color name='線條3-藍' hex='4D96FF' rgb='77,150,255' />
+```
+
+### 粒子效果配色（5個粒子各不同）
+```
+<color name='粒子1-紅' hex='FF6B6B' rgb='255,107,107' />
+<color name='粒子2-黃' hex='FFD93D' rgb='255,217,61' />
+<color name='粒子3-綠' hex='6BCB77' rgb='107,203,119' />
+<color name='粒子4-藍' hex='4D96FF' rgb='77,150,255' />
+<color name='粒子5-粉' hex='FF69B4' rgb='255,105,180' />
+```
+
+### 文字配色
+```
+<color name='主要文字色' hex='333333' rgb='51,51,51' />
+<color name='次要文字色' hex='555555' rgb='85,85,85' />
+<color name='卡片背景色' hex='ffffff' rgb='255,255,255' opacity='0.9-0.95' />
+```
+
+## 字體定義（繁體中文）
+```
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+CSS 類別:
+.noto-sans-tc-regular { font-family: "Noto Sans TC", sans-serif; font-weight: 400; }
+.noto-sans-tc-medium { font-family: "Noto Sans TC", sans-serif; font-weight: 500; }
+.noto-sans-tc-bold { font-family: "Noto Sans TC", sans-serif; font-weight: 700; }
+.noto-sans-tc-black { font-family: "Noto Sans TC", sans-serif; font-weight: 900; }
+```
+
+## 設計元素
+以下元素必須包含:
+
+1. **標題區塊**:
+   - 主標題(彩虹漸層色 - Noto Sans TC Black 900)
+   - 副標題(補充資訊 - Noto Sans TC Bold 700)
+   - 徽章(紅黃漸層背景)
+   - 相關 Font Awesome 圖示
+
+2. **視覺元素**:
+   - 右側資訊卡片
+   - 徽章或標籤(主題/類別)
+   - 溫馨點點背景圖案
+   - 3個發光球體(金黃、亮粉紅、天空藍)
+
+3. **內容特色**:
+   - 4 個重點,每個顏色不同(紅、黃、綠、粉)
+   - 每個重點搭配彩色圖示
+   - 每個重點簡短清晰
+   - Hover 互動效果(向上浮起+放大)
+
+4. **動態效果**:
+   - 6 個以上浮動圖示(6種不同顏色)
+   - SVG 線條動畫(3條不同顏色)
+   - 旋轉圓形(3層不同顏色)
+   - 5 個粒子上升效果(5種不同顏色)
+   - 發光脈衝效果
+   - 點點移動動畫
+
+5. **響應式設計**:
+   - width: 100%, aspect-ratio: 16/9
+   - 使用 clamp() 流暢字體大小
+   - 平板(1024px)、手機(768px)、小手機(480px)斷點適配
+
+## 動畫效果範例
+```
+/* 浮動 */
+@keyframes float {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    33% { transform: translate(40px, -40px) rotate(15deg); }
+    66% { transform: translate(-30px, 30px) rotate(-15deg); }
+}
+
+/* 旋轉 */
+@keyframes rotate360 {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* 脈衝 */
+@keyframes pulse {
+    0%, 100% { opacity: 0.3; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(1.08); }
+}
+
+/* 發光 */
+@keyframes glow {
+    0%, 100% { filter: drop-shadow(0 0 20px rgba(255, 107, 107, 0.6)); }
+    50% { filter: drop-shadow(0 0 40px rgba(255, 217, 61, 0.8)); }
+}
+
+/* 繪製線條 */
+@keyframes drawLine {
+    0%, 100% { stroke-dashoffset: 1000; opacity: 0; }
+    10%, 90% { opacity: 0.4; }
+    50% { stroke-dashoffset: 0; }
+}
+
+/* 粒子上升 */
+@keyframes riseUp {
+    0% { transform: translateY(0) scale(1); opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 0.8; }
+    100% { transform: translateY(-120vh) scale(1.5); opacity: 0; }
+}
+```
+
+## 使用範例
+```
+[主題名稱]的資訊圖表縮圖,使用 HTML/CSS 創建
+設定為 16:9 尺寸(1920x1080px),100% 寬度響應式
+使用溫馨家庭風格配色
+字體使用 Noto Sans TC(400, 500, 700, 900 字重)
+背景:淺色漸層(奶油→粉紅→黃→藍) + 溫馨點點圖案 + 3 個發光球體(金黃、粉紅、天藍)
+加入動畫效果:
+- 6 個浮動圖示(6種不同顏色,依主題選擇 Font Awesome 圖示)
+- 3 條 SVG 線條(紅、綠、藍)
+- 旋轉圓形(3 層,黃、粉、綠)
+- 5 個粒子從底部上升(紅、黃、綠、藍、粉)
+- 標題彩虹漸層發光動畫
+版面配置:
+左側 - 標題 + 4 個特色要點(每個不同顏色:紅、黃、綠、粉,帶圖示和 Hover 效果)
+右側 - 3 張資訊卡片(每張不同顏色:藍、紅、綠) + 強調區塊
+內容要點:
+1. [第一個重點](圖示:fas fa-..., 珊瑚紅 #FF6B6B)
+2. [第二個重點](圖示:fas fa-..., 亮黃色 #FFD93D)
+3. [第三個重點](圖示:fas fa-..., 翠綠色 #6BCB77)
+4. [第四個重點](圖示:fas fa-..., 亮粉紅 #FF69B4)
+```
+
+## 風格變化建議
+
+**教育/學習**: 藍黃綠配色、書本/燈泡圖示、書頁裝飾
+**健康/運動**: 綠橘配色、心跳/啞鈴圖示、有機曲線
+**創意/設計**: 彩虹漸層、調色盤/筆刷圖示、曲線裝飾
+**美食/烹飪**: 紅黃橘配色、餐具/食物圖示、溫暖曲線
+**家庭/親子**: 粉綠藍配色、愛心/家庭圖示、柔和圓形
+
+## 注意事項
+- 確保文字與背景有足夠對比度(使用深灰色文字 #333)
+- 動畫不要過度,保持流暢
+- 響應式在平板/手機正常顯示
+- 每個要點控制在 10 字以內
+- 每個元素使用不同鮮艷顏色,營造溫馨活潑氛圍
+- 卡片背景使用高透明度白色(0.9-0.95)
+
+---
+**根據主題調整配色、圖示和動畫,達到最佳視覺效果**
+
+```
+# 將以下的内容產生網頁:
+```
+[自行貼上你的內容於此]
