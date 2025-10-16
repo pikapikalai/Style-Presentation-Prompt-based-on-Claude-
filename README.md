@@ -25,4 +25,5 @@
 ![圖片範例2](https://github.com/pikapikalai/Style-Presentation-Prompt-based-on-Claude-/blob/main/demo_pic/2b.jpg)
 
 3.timeline時間表提示詞
-待補
+![圖片範例](https://github.com/pikapikalai/Style-Presentation-Prompt-based-on-Claude-/blob/main/demo_pic/timeline.jpg)
+
